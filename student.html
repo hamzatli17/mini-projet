@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="home-tab"
+            data-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+            >calcultor</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="profile-tab"
+            data-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false"
+            >nombres des abscences</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="contact-tab"
+            data-toggle="tab"
+            href="#contact"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false"
+            >mes notes</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="edit-tab"
+              data-toggle="tab"
+              href="#edit"
+              role="tab"
+              aria-controls="edit"
+              aria-selected="false"
+              >edit</a
+            >
+          </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="noteMaths">note math</label>
+                <input type="number" class="form-control" id="noteMaths">
+                <p id="noteMathsMsg" class="red"></p>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="notePhysiques">note physique</label>
+                <input type="number" class="form-control" id="notePhysiques">
+                <p id="notePhysiquesMsg" class="red"></p>
+
+            </div>
+            <div class="form-group col-md-12">
+                <label for="noteChimies">note chimie</label>
+                <input type="number" class="form-control" id="noteChimies">
+                <p id="noteChimiesMsg" class="red"></p>
+
+            </div>
+            <div class="form-group col-md-12">
+                <label for="noteInformatiques">note informatique</label>
+                <input type="number" class="form-control" id="noteInformatiques">
+                <span id="noteInformatiquesMsg" class="red"></span>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="noteElectoniques">note electronique</label>
+                <input type="number" class="form-control" id="noteElectoniques">
+                <span id="noteElectoniquesMsg" class="red"></span>
+
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="calculMoyenne()">calculer</button>
+            <div id="moy"></div>
+        </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
+        <div id="divNombre"></div>
+          <div id="divStTable">
+            <script>
+              renderAbscence();
+            </script>
+          </div>
+          
+        </div>
+        
+        <div
+          class="tab-pane fade"
+          id="contact"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+        >
+          <div id="divTable">
+            <script>
+              renderMoyenne();
+            </script>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="edit"
+          role="tabpanel"
+          aria-labelledby="edit-tab"
+        >
+        <div class="container">
+            <h1 class="center">your details</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/a.png"  width='300px' height="300px" alt="">
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <tr>
+                            <td> First Name</td>
+                            <td id="fiName"> name</td>
+                        </tr>
+                        <tr>
+                            <td> Last Name</td>
+                            <td id="laName"> name</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td id="tEmail">email</td>
+                        </tr>
+                        <tr>
+                            <td>classe</td>
+                            <td id="tClasse">classe</td>
+                        </tr>
+                        <tr>
+                            <td>tel</td>
+                            <td id="tTel">tel</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button  onclick="modifierSt() " class="btn btn-danger" >modifier</button></td>
+                        </tr>
+                        <tr></tr>
+                    </table>
+                    <div id="editST"></div>
+                </div>
+               
+            </div>
+            
+        </div>
+        
+        <script>
+            var id = JSON.parse(localStorage.getItem("idSt"));
+            var student = searchStById(id);
+            document.getElementById('fiName').innerHTML = student.fName ;
+            document.getElementById('laName').innerHTML = student.lName ;
+            document.getElementById('tEmail').innerHTML = student.email ;
+            document.getElementById('tClasse').innerHTML = student.classe ;
+            document.getElementById('tTel').innerHTML = student.tel ;
+           
+        
+        </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

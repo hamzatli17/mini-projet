@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup teacher</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </head>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+  <body>
+    <div class="container" id="myform">
+      <h1 class="center">SignUp Teacher Page</h1>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" />
+          <p id="firstNameMsg" class="red"></p>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" />
+          <p id="lastNameMsg" class="red"></p>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail" />
+          <p id="emailMsg" class="red"></p>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword" />
+          <span id="pwdMsg" class="red"></span>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="confirmPwd">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPwd" />
+          <span id="confirmPwdMsg" class="red"></span>
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="cin">C.I.N</label>
+        <input type="number" class="form-control" id="cin" />
+        <span id="cinMsg" class="red"></span>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="classe">Classe</label>
+          <select id="classe" class="form-control">
+            <option value="1">1ère année </option>
+            <option value="2">2ème année</option>
+            <option value="3">3ème année</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tel">Tel</label>
+          <input type="number" class="form-control" id="tel" />
+          <span id="telMsg" class="red"></span>
+        </div>
+      </div>
+
+      <div class="center">
+        <button type="submit" class="btn btn-primary" onclick="signupTeacher()">
+          Sign up
+        </button>
+        <button type="reset" class="btn btn-danger" onclick="resetAllT()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="home-tab"
+            data-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+            >Liste des etudiants</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="profile-tab"
+            data-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false"
+            >Liste des presences</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="contact-tab"
+            data-toggle="tab"
+            href="#contact"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false"
+            >les notes</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="command-tab"
+            data-toggle="tab"
+            href="#command"
+            role="tab"
+            aria-controls="command"
+            aria-selected="false"
+            >classement</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="edit-tab"
+            data-toggle="tab"
+            href="#edit"
+            role="tab"
+            aria-controls="edit"
+            aria-selected="false"
+            >edit</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <div id="noStudent"></div>
+
+          <div id="divUserTable">
+            <script>
+              renderStudents();
+            </script>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
+          <div id="divSearchedTable">
+            <div class="form-group">
+              <label>Date</label>
+              <input class="form-control" type="date" id="searchByDate" />
+            </div>
+
+            <button onclick="searchStudent()" class="btn btn-danger">
+              Search
+            </button>
+          </div>
+          <div id="divPresent"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="contact"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+        >
+          <div id="divNoteTable">
+            <script>
+              renderNote();
+            </script>
+          </div>
+          <div id="editForm"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="command"
+          role="tabpanel"
+          aria-labelledby="command-tab"
+        >
+          <div id="divTable">
+            <script>
+              renderMoy();
+            </script>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="edit"
+          role="tabpanel"
+          aria-labelledby="edit-tab"
+        >
+        <div class="container">
+            <h1 class="center">your details</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/a.png"  width='300px' height="300px" alt="">
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <tr>
+                            <td> First Name</td>
+                            <td id="fiName"> name</td>
+                        </tr>
+                        <tr>
+                            <td> Last Name</td>
+                            <td id="laName"> name</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td id="tEmail">email</td>
+                        </tr>
+                        <tr>
+                            <td>classe</td>
+                            <td id="tClasse">classe</td>
+                        </tr>
+                        <tr>
+                            <td>tel</td>
+                            <td id="tTel">tel</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button  onclick="modifier() " class="btn btn-danger" >modifier</button></td>
+                        </tr>
+                        <tr></tr>
+                    </table>
+                    <div id="edit"></div>
+                </div>
+               
+            </div>
+            
+        </div>
+        
+        <script>
+            var id = JSON.parse(localStorage.getItem("id"));
+            var teacher = searchById(id);
+            document.getElementById('fiName').innerHTML = teacher.fName ;
+            document.getElementById('laName').innerHTML = teacher.lName ;
+            document.getElementById('tEmail').innerHTML = teacher.email ;
+            document.getElementById('tClasse').innerHTML = teacher.classe ;
+            document.getElementById('tTel').innerHTML = teacher.tel ;
+           
+        
+        </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
